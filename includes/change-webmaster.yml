@@ -1,0 +1,8 @@
+- name: Cambiar el e-mail del webmaster
+  lineinfile:
+    path: /etc/apache2/sites-available/000-default.conf
+    regexp: 'ServerAdmin webmaster@localhost'
+    line: '	ServerAdmin webmaster@desafio6.bootcamp.com'
+  when: is_ubuntu
+  notify:
+  - Reload Apache

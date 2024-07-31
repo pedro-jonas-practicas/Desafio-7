@@ -1,0 +1,5 @@
+- name: Deshabilita el sitio default
+  command: a2dissite 000-default.conf
+  notify:
+    - Reload Apache
+  when: is_ubuntu
