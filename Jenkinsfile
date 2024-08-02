@@ -2,6 +2,7 @@ pipeline {
     agent { label 'ansible-controller' }
     environment {
         ANSIBLE_PRIVATE_KEY=credentials('agente-jenkins-cred') 
+        ANSIBLE_CONFIG=ansible.cfg
     }
     stages {
         stage('Run Ansible Playbook from Jenkins') {
