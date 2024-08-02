@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'ansible-controller' }
     environment {
-        ANSIBLE_PRIVATE_KEY=credentials('agente-jenkins-cred') 
+        ANSIBLE_PRIVATE_KEY=credentials('ubuntu-cred-prueba') 
         ANSIBLE_CONFIG='ansible.cfg'
     }
     stages {
