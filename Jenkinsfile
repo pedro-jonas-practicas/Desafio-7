@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'ansible-controller' }
     environment {
-        ANSIBLE_PRIVATE_KEY=credentials('ubuntu-cred-prueba') 
+        ANSIBLE_PRIVATE_KEY=credentials('ansible-controller-key') 
         ANSIBLE_CONFIG='ansible.cfg'
     }
     stages {
