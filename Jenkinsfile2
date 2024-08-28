@@ -1,0 +1,33 @@
+pipeline {
+    agent { label 'ansible-controller' }
+    environment {
+        ANSIBLE_PRIVATE_KEY=credentials('ansible-controller-key') 
+        ANSIBLE_CONFIG='ansible.cfg'
+    }
+    stages {
+        stage('Deploy a dev') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                sh 'ansible-playbook -i inventory-dev.ini --private-key=$ANSIBLE_PRIVATE_KEY main.yml'
+            }
+        }
+        stage('Deploy a staging') {
+            when {
+                branch 'staging'
+            }
+            steps {
+                sh 'ansible-playbook -i inventory-staging.ini --private-key=$ANSIBLE_PRIVATE_KEY main.yml'
+            }
+        }
+        stage('Deploy a prod') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh 'ansible-playbook -i inventory-prod.ini --private-key=$ANSIBLE_PRIVATE_KEY main.yml'
+            }
+        }
+    }
+}
