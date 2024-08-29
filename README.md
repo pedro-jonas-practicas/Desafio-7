@@ -7,10 +7,8 @@
 - Exposición de controlador Jenkins con [NGROK](https://ngrok.com/) 
 - Deploy a PROD desde STAGING mediante Pull Request
 
-###Images
+### Diagrama de secuencia
 
-Image:
-
-![](https://drive.google.com/drive/u/4/folders/1O5lWj1jGMY1PV6LXRGdhxXgPhOtu7Ruy)
+![desf7](https://github.com/user-attachments/assets/79c09e30-4c1f-4903-95b1-8ffb2d6ca431)
 
 
